@@ -3,7 +3,7 @@
     <Navbar @logout="logoutUser()" :status="status"></Navbar>
     <div class="main-background">
       <transition name="fade">
-        <router-view/>
+        <router-view @login="changeStatus($event)"/>
       </transition>
     </div>
     <Footer></Footer>
@@ -30,8 +30,15 @@ export default {
   },
   methods: {
     logoutUser(){
-      this.loginUser = false;
-      this.loginAdmin = false;
+      this.status.loginUser = false;
+      this.status.loginAdmin = false;
+    },
+    changeStatus(role){
+      if(role === 'user'){
+         this.status.loginUser = true;
+      }else if(role === 'admin'){
+         this.status.loginAdmin = true;
+      }
     }
   },
   created(){

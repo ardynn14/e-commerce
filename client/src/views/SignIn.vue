@@ -59,6 +59,7 @@ export default {
           localStorage.setItem("token", data.token);
           localStorage.setItem("role", data.role);
           // console.log(data);
+          this.$emit('login', data.role);
           this.$router.push('/products')
         })
         .catch(err => {
