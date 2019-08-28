@@ -17,10 +17,12 @@
         </button>
       </div>
       <div v-if="status.loginAdmin" class="d-flex justify-content-around align-items-center">
-        <button class="btn">
-          <i class="fas fa-edit"></i>
-        </button>
-        <button class="btn">
+        <router-link :to="`/edit/${info._id}`" class="btn">
+          <button class="btn">
+            <i class="fas fa-edit"></i>
+          </button>
+        </router-link>
+        <button class="btn" @click.prevent="deleteProduct(info._id)">
           <i class="fas fa-trash-alt"></i>
         </button>
       </div>
@@ -29,7 +31,7 @@
 </template>
 
 <script>
-  import axios from "axios";
+import axios from "axios";
 export default {
   props: ["info"],
   data() {
@@ -53,11 +55,26 @@ export default {
           id
         }
       })
-        .then(({data}) => {
-            console.log(`data`);
+        .then(({ data }) => {
+          console.log(`data`);
           console.log(
             `sukses menambahkan item ke keranjang kamu, ayo tambah lagi`
           );
+        })
+        .catch(console.log);
+    },
+    deleteProduct(id) {
+      let token = localStorage.getItem("token");
+      axios({
+        url: `http://localhost:3000/products/${id}`,
+        method: "delete",
+        headers: {
+          token
+        }
+      })
+        .then(({ data }) => {
+          console.log(data);
+          this.$emit("deleteProduct");
         })
         .catch(console.log);
     }

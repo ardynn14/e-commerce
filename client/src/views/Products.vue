@@ -4,7 +4,12 @@
       <h2 class="mt-5">Produk Kami</h2>
     </div>
     <div class="p-5 row d-flex justify-content-around">
-      <productCard v-for="product in productList" :key="product.id" :info="product"></productCard>
+      <productCard
+        @deleteProduct="getNewData()"
+        v-for="product in productList"
+        :key="product.id"
+        :info="product"
+      ></productCard>
     </div>
   </div>
 </template>
@@ -21,6 +26,20 @@ export default {
     return {
       productList: []
     };
+  },
+  methods: {
+    getNewData() {
+      axios({
+        url: "http://localhost:3000/products",
+        method: "GET"
+      })
+        .then(({ data }) => {
+          // console.log(data);
+          this.productList = data;
+          console.log(this.productList);
+        })
+        .catch(console.log);
+    }
   },
   created() {
     axios({

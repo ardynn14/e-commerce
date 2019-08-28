@@ -6,7 +6,7 @@
           <img src="../assets/logo.png" alt="Batik Nusantara logo" />
         </router-link>
       </div>
-      <div class="d-flex justify-content-center align-items-center">
+      <!-- <div class="d-flex justify-content-center align-items-center">
         <form class="d-flex justify-content-center align-items-center">
           <i class="fas fa-search mr-2" style="color: grey;font-size: 22px;"></i>
           <input
@@ -18,7 +18,7 @@
             autocomplete="off"
           />
         </form>
-      </div>
+      </div> -->
       <div
         v-if="!status.loginUser && !status.loginAdmin"
         class="d-flex justify-content-center align-items-center"
@@ -84,7 +84,7 @@
             </router-link>
           </li>
           <li class="mr-3">
-            <router-link to="/info">
+            <router-link to="/add-product">
               <i class="fas fa-plus-square"></i> Tambah produk
             </router-link>
           </li>

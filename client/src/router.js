@@ -5,7 +5,9 @@ import Info from './views/Info.vue';
 import SignIn from './views/SignIn.vue';
 import SignUp from './views/SignUp.vue';
 import Products from './views/Products.vue';
-import Cart from './views/Carts.vue'
+import Cart from './views/Carts.vue';
+import addProduct from './views/addProduct';
+import editProduct from './views/editProduct';
 
 Vue.use(Router);
 
@@ -37,6 +39,14 @@ export default new Router({
       path: '/cart',
       name: 'cart',
       component: Cart,
+    },{
+      path: '/add-product',
+      name: 'add-product',
+      component: addProduct,
+    },{
+      path: '/edit/:id',
+      name: 'edit-product',
+      component: editProduct,
     }
   ],
 });
