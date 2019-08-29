@@ -11,10 +11,11 @@ class CartController {
             _id: item_id
         })
             .then(function (product) {
-                // console.log(product);
                 return Cart.updateOne(
                     { _id },
-                    { $push: { cartList: product } },
+                    { $push: { cartList: product } }, {
+                        new: true
+                    }
                 );
             })
             .then(function () {
