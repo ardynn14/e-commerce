@@ -65,7 +65,7 @@ export default {
       console.log(`masuk siniiiiiiiiTRETRFDGDGFDGDGFDGDGFDG`);
       console.log(data);
       axios({
-        url: `http://localhost:3000/users/sign-up`,
+        url: `35.240.170.239/users/sign-up`,
         method: "POST",
         data
       })

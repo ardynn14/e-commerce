@@ -46,7 +46,7 @@ export default {
     addCart(id) {
       let token = localStorage.getItem("token");
       axios({
-        url: `http://localhost:3000/cart`,
+        url: `35.240.170.239/cart`,
         method: "POST",
         headers: {
           token
@@ -66,7 +66,7 @@ export default {
     deleteProduct(id) {
       let token = localStorage.getItem("token");
       axios({
-        url: `http://localhost:3000/products/${id}`,
+        url: `35.240.170.239/products/${id}`,
         method: "delete",
         headers: {
           token

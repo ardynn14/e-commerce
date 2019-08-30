@@ -51,7 +51,7 @@ export default {
         password: this.password
       };
       axios({
-        url: `http://localhost:3000/users/sign-in`,
+        url: `35.240.170.239/users/sign-in`,
         method: "POST",
         data
       })

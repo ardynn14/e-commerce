@@ -30,7 +30,7 @@ export default {
   methods: {
     getNewData() {
       axios({
-        url: "http://localhost:3000/products",
+        url: "35.240.170.239/products",
         method: "GET"
       })
         .then(({ data }) => {
@@ -43,7 +43,7 @@ export default {
   },
   created() {
     axios({
-      url: "http://localhost:3000/products",
+      url: "35.240.170.239/products",
       method: "GET"
     })
       .then(({ data }) => {

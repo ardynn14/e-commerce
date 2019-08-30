@@ -37,7 +37,7 @@ export default {
     deleteItem(id) {
       let token = localStorage.getItem("token");
       axios({
-        url: `http://localhost:3000/cart/${id}`,
+        url: `35.240.170.239/cart/${id}`,
         method: `delete`,
         headers: {
           token

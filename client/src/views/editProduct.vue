@@ -92,7 +92,7 @@ export default {
       data.append("description", this.productdescription);
       data.append("file", this.productpicture);
       axios({
-        url: `http://localhost:3000/products/${id}`,
+        url: `35.240.170.239/products/${id}`,
         method: 'patch',
         headers: {
           token
@@ -116,7 +116,7 @@ export default {
     const id = this.$route.params.id;
     const token = localStorage.getItem("token");
     axios({
-      url: `http://localhost:3000/products/${id}`,
+      url: `35.240.170.239 /products/${id}`,
       method: "get",
       headers: {
         token

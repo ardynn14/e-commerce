@@ -91,8 +91,8 @@ export default {
       data.append("description", this.productdescription);
       data.append("file", this.productpicture);
       axios({
-        //    http://localhost:3000/products
-        url: `http://localhost:3000/products`,
+        //    35.240.170.239 /products
+        url: `35.240.170.239/products`,
         method: "post",
         headers: {
           token

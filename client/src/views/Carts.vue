@@ -30,7 +30,7 @@ export default {
     getNewCartData() {
       let token = localStorage.getItem("token");
       axios({
-        url: `http://localhost:3000/cart`,
+        url: `35.240.170.239 /cart`,
         method: "GET",
         headers: {
           token
@@ -46,7 +46,7 @@ export default {
   created() {
     let token = localStorage.getItem("token");
     axios({
-      url: `http://localhost:3000/cart`,
+      url: `35.240.170.239/cart`,
       method: "GET",
       headers: {
         token
