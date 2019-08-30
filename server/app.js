@@ -11,7 +11,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const errorHandler = require('./middleware/errorHandler');
 
-mongoose.connect(`mongodb://localhost/ecommerce-${process.env.NODE_ENV}`, { useNewUrlParser: true, useFindAndModify: false }, function (err) {
+mongoose.connect(process.env.DB, { useNewUrlParser: true, useFindAndModify: false }, function (err) {
     if (!err) { 
         console.log(`connected to database`);
     } else {
